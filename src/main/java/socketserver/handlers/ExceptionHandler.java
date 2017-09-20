@@ -15,7 +15,7 @@ public class ExceptionHandler<S, X extends Throwable> extends DecoratingHandler<
         this(other,  (s, x) -> System.err.println("Issue with: " + s + " error " + x));
     }
 
-    public void handle(S s) throws X {
+    public void handle(S s) {
         try {
             super.handle(s);
         } catch (Throwable x) {
